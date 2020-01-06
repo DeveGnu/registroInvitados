@@ -24,8 +24,8 @@ $Institucion = $_GET['institucion'];
 $Puesto = $_GET['puesto'];
 $Correo = $_GET['email'];
 
-$TC = "Esta es su ficha de pre registro para el evento,
-es importante que la presente para poder acceder y asi confirmar su asistencia en el mismo.";
+$TC = utf8_decode("Esta es su hoja de registro para el evento,
+es importante que la presente de forma digital o impresa el día del evento para poder acceder y así confirmar su asistencia en el mismo.");
 
 $Banner = 'Desarrollado por Trebola';
 //------------------------------------------------------------
@@ -46,23 +46,23 @@ $pdf->Ln(85);
 $pdf->Image("../QRInvitados/".$Correo.".png",70,50,70);//url|->|v|tamano
 //----------------------- NOMBRE -----------------------
 $pdf->Cell(75);//Espacio de izquierda a derecha
-$pdf->Cell(40,15,$Nombre,0,1,'C');
+$pdf->Cell(40,15,utf8_decode($Nombre),0,1,'C');
 
 //----------------------- APELIDO PATERNO -----------------------
 $pdf->Cell(75);//Espacio de izquierda a derecha
-$pdf->Cell(40,15,$Apaterno,0,1,'C');
+$pdf->Cell(40,15,utf8_decode($Apaterno),0,1,'C');
 
 //----------------------- APELLIDO MATERNO -----------------------
 $pdf->Cell(75);//Espacio de izquierda a derecha
-$pdf->Cell(40,15,$Amaterno,0,1,'C');
+$pdf->Cell(40,15,utf8_decode($Amaterno),0,1,'C');
 
 //----------------------- INSTITUCION -----------------------
-$pdf->Cell(75);//Espacio de izquierda a derecha
-$pdf->Cell(40,15,$Institucion,0,1,'C');
+//$pdf->Cell(75);//Espacio de izquierda a derecha
+//$pdf->Cell(40,15,$Institucion,0,1,'C');
 
 //----------------------- PUESTO -----------------------
-$pdf->Cell(75);//Espacio de izquierda a derecha
-$pdf->Cell(40,15,$Puesto,0,1,'C');
+//$pdf->Cell(75);//Espacio de izquierda a derecha
+//$pdf->Cell(40,15,$Puesto,0,1,'C');
 
 //----------------------- CORREO -----------------------
 $pdf->Cell(75);//Espacio de izquierda a derecha

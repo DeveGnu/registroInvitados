@@ -9,20 +9,19 @@ mysql_query($Asistencia);
 
 //header("Location:ConfirmarAsistencia.php");
 
-$Persona = "SELECT * FROM Invitados WHERE email = '$Correo'";
+$Persona = "SELECT COUNT(*) FROM Invitados WHERE email = '$Correo'";
 mysql_query($Persona);
 
-if (mysql_num_rows($Persona) == 0)
+if ($Persona == 0)
 {
-	/*echo '<script type="text/javascript">
-		alert("El correo no ha sido registrado en el sistema");</script>
-	';*/
         header("Location:ErrorCorreo.php");
+        //header("Location:ConfirmarAsistencia.php");
 }
-else
+if($Persona == 1)
 {
+    //lo manda al reves por eso lo comente
 	header("Location:ConfirmarAsistencia.php");
+	//header("Location:ErrorCorreo.php");
 }
-
 
 ?>

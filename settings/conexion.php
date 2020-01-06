@@ -11,10 +11,18 @@ $DB_USER = "";
 $DB_PASS = "";
 $DB_NAME = "";
 
+/*no sirve*/
   // $conexion = mysql_connect("$DB_HOST", "$DB_USER", "$DB_PASS");
-  // $db = mysql_select_db(DB_NAME) or die(mysql_error());
+  // $conexion->set_charset("utf8");
+   //$db = mysql_select_db(DB_NAME) or die(mysql_error());
 
-mysql_connect($DB_HOST, $DB_USER, $DB_PASS) or die (mysql_error());
+/*sirve*/
+//mysql_connect($DB_HOST, $DB_USER, $DB_PASS) or die (mysql_error());
+//mysql_select_db($DB_NAME) or die(mysql_error());
+
+/*Acepta carecteres especiales en la db */
+$conexion = mysql_connect($DB_HOST, $DB_USER, $DB_PASS) or die (mysql_error());
+mysql_set_charset("UTF8", $conexion);
 mysql_select_db($DB_NAME) or die(mysql_error());
 
 ?>

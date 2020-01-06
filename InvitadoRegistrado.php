@@ -14,11 +14,11 @@
   <div class="form-box" id="login-box">
     <div class="header">Invitado registrado</div>
     <div class="body bg-gray" align="center">
-      <h2>Tu registro se ha realizado exitosamente, por favor imprime tu ficha y preséntala el día del evento para poder ingresar.<br/> Gracias.</h2>
+      <h2>Tu registro se ha realizado exitosamente, por favor imprime tu código QR y preséntalo el día del evento para confirmar su asistencia.<br/> Gracias.</h2>
     </div>
     <div class="footer">
         <!--<a href="tcpdf/Generador/FichaDeRegistro.php?email=<?php echo $_POST['email']."&nombre=". $_POST['name'];?>" target="_blank"><button class="btn btn-success btn-block">Descargar Ficha de Acreditación</button></a>-->
-        <a href="fpdf/GenerarPDF.php?name=<?php echo $_GET['name']."&aPaterno=".$_GET['aPaterno']."&aMaterno=".$_GET['aMaterno']."&institucion=".$_GET['institucion']."&puesto=".$_GET['puesto']."&email=".$_GET['email'];?>"><button class="btn btn-success btn-block">Descargar ficha de registro</button></a>
+        <a href="fpdf/GenerarPDF.php?name=<?php echo $_GET['name']."&aPaterno=".$_GET['aPaterno']."&aMaterno=".$_GET['aMaterno']."&institucion=".$_GET['institucion']."&puesto=".$_GET['puesto']."&email=".$_GET['email'];?>"><button class="btn btn-success btn-block">Descargar QR</button></a>
         <hr>
         <!--
         <a href="index.php">Registrar otro usuario</a>

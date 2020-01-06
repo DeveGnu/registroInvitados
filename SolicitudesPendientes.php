@@ -2,12 +2,12 @@
 
 include_once('settings/conexion.php');
 
-$Invitados = "SELECT * FROM Invitados";
+$SolicitudEnEspera = "SELECT * FROM EnEspera";
 /*$Registrados = "SELECT Count(id) FROM Invitados;";*/
 /*$Asistentes = "SELECT Count(*) FROM Invitados WHERE estado = 1;";*/
 /*$Faltantes = "SELECT Count(*) FROM Invitados WHERE estado = 0;";*/
 
-$res_Invitados = mysql_query($Invitados);
+$res_Invitados = mysql_query($SolicitudEnEspera);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $res_Invitados = mysql_query($Invitados);
   <link rel="stylesheet" href="static/css/AdminLTE.css" type="text/css">
 </head>
 <body class="bg-black">
-  <h1 align="center">Invitados registrados</h1>
+  <h1 align="center">Solicitudes pendientes</h1>
   <hr>
   <div class="container">
     <div class="row">
@@ -36,7 +36,6 @@ $res_Invitados = mysql_query($Invitados);
                 <th>Nombre</th>
                 <th>Institucion</th>
                 <th>Correo</th>
-                <th>Asistencia</th>
               </tr>
               <?php 
                 $cont = 1;
@@ -47,7 +46,7 @@ $res_Invitados = mysql_query($Invitados);
                 <td><?php echo $row_Invitado['nombre']; ?></td>
                 <td><?php echo $row_Invitado['institucion']; ?></td>
                 <td><?php echo $row_Invitado['email']; ?></td>
-                <td><?php if(!strcmp($row_Invitado['estado'], '1')){ ?><i style="color: green" class="fa fa-check-circle fa-2x"></i><?php } else{ ?> <i style="color: red" class="fa fa-times fa-2x"></i> <?php } ?></td>
+                
               </tr>
 
               <?php 

@@ -2409,9 +2409,11 @@ text-align: center;
 Page: register and login
 */
 .form-box {
-width: 360px;
+/*width: 360px; 09/05/18*/
+width: 720px;
 margin: 90px auto 0 auto;
 }
+
 .form-box .header {
 -webkit-border-top-left-radius: 4px;
 -webkit-border-top-right-radius: 4px;
